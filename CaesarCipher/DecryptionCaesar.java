@@ -1,17 +1,16 @@
 package CaesarCipher;
-
 import java.util.Arrays;
 
-public class EncryptionCaesar {
-    
+public class DecryptionCaesar {
+
     private final String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final int key;
 
-    public EncryptionCaesar(int key) {
+    public DecryptionCaesar(int key) {
          this.key = key; 
     }
 
-    public String encryptionWort(String wort){
+    public String decryptionWort(String wort){
 
         char []wortArr = wort.toCharArray();
         char []alphabetArr = alphabet.toCharArray();
@@ -19,11 +18,11 @@ public class EncryptionCaesar {
         for (int i = 0; i < wortArr.length; i++) {
             for (int j = 0; j < alphabetArr.length; j++) {
                 if(wortArr[i] == alphabetArr[j]){
-                    if(j+key < alphabetArr.length){
-                        wortArr[i] = alphabetArr[j+key];
+                    if(j-key >= 0){
+                        wortArr[i] = alphabetArr[j-key];
                         break;
                     }else{
-                        int overflowIndex = (j+key) - alphabetArr.length;
+                        int overflowIndex = alphabetArr.length-1 - key;
                         wortArr[i] = alphabetArr[overflowIndex];
                         break;
                     }
@@ -35,6 +34,4 @@ public class EncryptionCaesar {
 
         return wort;
     }
-
-    
 }
