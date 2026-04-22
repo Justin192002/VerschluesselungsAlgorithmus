@@ -25,7 +25,7 @@ public class EncryptionVigenere {
         int increment = 0;
 
         for (int i = 0; i < umwandlung.length; i++) {
-            if (increment <= schluessel.length){
+            if (increment < schluessel.length){
                 umwandlung[i] = getNewChar(checkPosition(umwandlung[i]),schluessel[increment]);                
 
             }else{
@@ -35,9 +35,9 @@ public class EncryptionVigenere {
             increment++;
         }
 
+        
 
-
-        return umwandlung.toString();
+        return new String(umwandlung); // Bei Arrays immer den String Konstruktor verwenden, da sonst die Adresse des Arrays zurückgegeben wird.
     }
 
     public char getNewChar(int origin, int verschiebung){

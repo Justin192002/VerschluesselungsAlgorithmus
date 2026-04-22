@@ -1,3 +1,4 @@
+import VigenereCipher.DecryptionVigenere;
 import VigenereCipher.EncryptionVigenere;
 
 public class Main {
@@ -13,5 +14,8 @@ public class Main {
 
         EncryptionVigenere encryptVigenere = new EncryptionVigenere("key");
         System.out.println(encryptVigenere.encryptionWort("THISATEST"));
+        //System.out.println("DLGCEROWR"); // Lösung mit key
+        DecryptionVigenere decryptVigenere = new DecryptionVigenere("key");
+        System.out.println(decryptVigenere.decryptionWort("DLGCEROWR"));
     }
 }
