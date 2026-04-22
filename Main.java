@@ -1,17 +1,17 @@
-
-import CaesarCipher.DecryptionCaesar;
-import CaesarCipher.EncryptionCaesar;
-
+import VigenereCipher.EncryptionVigenere;
 
 public class Main {
     
 
     public static void main(String[] args) {
         
-        EncryptionCaesar encrypt = new EncryptionCaesar(4);
+        /*EncryptionCaesar encrypt = new EncryptionCaesar(4);
         DecryptionCaesar decrypt = new DecryptionCaesar(4);
         System.out.println(encrypt.encryptionWort("Justin"));
-        System.out.println(decrypt.decryptionWort("Nywxmr"));
+        System.out.println(decrypt.decryptionWort("Nywxmr"));*/
 
+
+        EncryptionVigenere encryptVigenere = new EncryptionVigenere("key");
+        System.out.println(encryptVigenere.encryptionWort("THISATEST"));
     }
 }
