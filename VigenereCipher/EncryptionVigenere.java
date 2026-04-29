@@ -35,7 +35,6 @@ public class EncryptionVigenere {
             increment++;
         }
 
-        
 
         return new String(umwandlung); // Bei Arrays immer den String Konstruktor verwenden, da sonst die Adresse des Arrays zurückgegeben wird.
     }

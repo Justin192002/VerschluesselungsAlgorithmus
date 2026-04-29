@@ -19,9 +19,11 @@ public class DecryptionVigenere {
         //  Danach muss ich die neuen Positionen wieder in Buchstaben umwandeln.
         for (int i = 0; i < keyArr.length; i++){
             keyPosition[i] = checkPosition(keyArr[i]);
+          
         }
         for (int j = 0; j < umwandlung.length; j++) {
             umwandlungPosition[j] = checkPosition(umwandlung[j]);
+            
         }
         indexVerschiebung = getNewPostion(umwandlungPosition, keyPosition);
         umwandlung = getNewChar(indexVerschiebung);
@@ -29,18 +31,20 @@ public class DecryptionVigenere {
         return new String(umwandlung);
     }
 
+    //Errechnung der neuen Position durch die position des buchstaben aus dem Wort und dem Key
+
     public int[] getNewPostion(int[] umwandlungPosition, int[] keyPosition){
         int [] newPosition = new int[umwandlungPosition.length];
         int increment = 0;
 
         for (int i = 0; i < umwandlungPosition.length; i++) {   // Potentieller Bug
-            if (increment > keyPosition.length-1){
+            if (increment <= keyPosition.length-1){
                 newPosition[i] = umwandlungPosition[i] - keyPosition[increment];                
 
             }else{
                 increment = 0;
                 newPosition[i] = umwandlungPosition[i] - keyPosition[increment];
-            }   
+            }
             increment++;
         }
 
@@ -52,7 +56,7 @@ public class DecryptionVigenere {
         char [] newChar = new char[newPosition.length];
 
         for (int i = 0; i < newPosition.length; i++) {
-            while(newPosition[i] < 0){
+            if(newPosition[i] < 0){
                 newPosition[i] = newPosition[i] + alphabet.length;
             }
             newChar[i] = alphabet[newPosition[i]];
@@ -60,9 +64,6 @@ public class DecryptionVigenere {
 
         return newChar;
     }
-
-
-
 
     public int checkPosition(char buchstabe){
 

@@ -1,5 +1,3 @@
-import VigenereCipher.DecryptionVigenere;
-import VigenereCipher.EncryptionVigenere;
 
 public class Main {
     
@@ -12,10 +10,10 @@ public class Main {
         System.out.println(decrypt.decryptionWort("Nywxmr"));*/
 
 
-        EncryptionVigenere encryptVigenere = new EncryptionVigenere("key");
-        System.out.println(encryptVigenere.encryptionWort("THISATEST"));
-        //System.out.println("DLGCEROWR"); // Lösung mit key
-        DecryptionVigenere decryptVigenere = new DecryptionVigenere("key");
-        System.out.println(decryptVigenere.decryptionWort("DLGCEROWR"));
+        //EncryptionVigenere encryptVigenere = new EncryptionVigenere("hftrocks");
+        //System.out.println(encryptVigenere.encryptionWort("donaldtrump"));
+        //DecryptionVigenere decryptVigenere = new DecryptionVigenere("key");
+        //System.out.println(decryptVigenere.decryptionWort("DLGCEROWR"));
+        
     }
 }

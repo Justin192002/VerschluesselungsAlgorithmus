@@ -1,3 +1,4 @@
 - Caesar Cipher(Monoalphabetic substitution cipher)
 - Vienere Cipher(Polyaphabetic substitution Cipher)
+- Plaintext
 - DES Algorithmus nach Standard
